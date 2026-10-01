@@ -1,0 +1,44 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Theme dictionaries make glass brightness and content contrast follow ClassIsland's active theme. -->
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="LiquidGlassSurfaceBrush" Color="#B51B2430" />
+          <SolidColorBrush x:Key="LiquidGlassRimBrush" Color="#52000000" />
+          <SolidColorBrush x:Key="LiquidGlassTextBrush" Color="#FF14171E" />
+          <BoxShadows x:Key="LiquidGlassShadow">0 10 28 0 #24000000, 0 1 0 0 #42FFFFFF</BoxShadows>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="LiquidGlassSurfaceBrush" Color="#9CFFFFFF" />
+          <SolidColorBrush x:Key="LiquidGlassRimBrush" Color="#94FFFFFF" />
+          <SolidColorBrush x:Key="LiquidGlassTextBrush" Color="#FFFAFAFC" />
+          <BoxShadows x:Key="LiquidGlassShadow">0 10 28 0 #52000000, 0 1 0 0 #7AFFFFFF</BoxShadows>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+
+  <!-- Apply Classes="liquidGlass" to any ClassIsland component container. -->
+  <Style Selector="Border.liquidGlass">
+    <Setter Property="Background" Value="{DynamicResource LiquidGlassSurfaceBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource LiquidGlassRimBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BoxShadow" Value="{DynamicResource LiquidGlassShadow}" />
+  </Style>
+  <Style Selector="Border.liquidGlassPreview">
+    <Setter Property="Background">
+      <Setter.Value>
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+          <GradientStop Offset="0" Color="#40FFFFFF" />
+          <GradientStop Offset="0.45" Color="#16000000" />
+          <GradientStop Offset="1" Color="#2D7B61FF" />
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style Selector="TextBlock.liquidGlassTitle, TextBlock.liquidGlassText">
+    <Setter Property="Foreground" Value="{DynamicResource LiquidGlassTextBrush}" />
+  </Style>
+</Styles>

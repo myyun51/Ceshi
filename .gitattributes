@@ -1,0 +1,10 @@
+# All plugin source and configuration files must be rendered as text in Git hosting UIs.
+*.axaml text diff
+*.cs text diff
+*.csproj text diff
+*.md text diff
+*.yml text diff
+*.yaml text diff
+*.json text diff
+*.ps1 text diff
+*.xml text diff

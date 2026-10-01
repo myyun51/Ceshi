@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="ClassIsland.LiquidGlass.Views.LiquidGlassSettingsPage">
+  <ScrollViewer>
+    <StackPanel Spacing="16" Margin="24" MaxWidth="760">
+      <TextBlock Text="液态玻璃" FontSize="24" FontWeight="SemiBold" />
+      <TextBlock TextWrapping="Wrap"
+                 Text="主题已启用。玻璃表面会在深色主题使用浅色半透明层和亮色文字，在浅色主题使用深色半透明层和深色文字；边缘高光与背景模糊会随主题同步变化。" />
+      <Border Classes="liquidGlass liquidGlassPreview" Padding="24" CornerRadius="22">
+        <StackPanel Spacing="6">
+          <TextBlock Text="下一节：数学" Classes="liquidGlassTitle" FontSize="20" FontWeight="SemiBold" />
+          <TextBlock Text="08:20 – 09:00 · 教学楼 A-302" Classes="liquidGlassText" />
+        </StackPanel>
+      </Border>
+      <TextBlock TextWrapping="Wrap" Opacity="0.72"
+                 Text="这是预览卡片。选择本插件主题后，带 liquidGlass 类的 ClassIsland 组件会获得相同的自适应玻璃样式。" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>
