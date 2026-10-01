@@ -1,0 +1,13 @@
+entranceAssembly: ClassIsland.LiquidGlass.dll
+name: 液态玻璃
+id: ceshi.liquidglass
+description: 为 ClassIsland 提供会随系统明暗主题自动调整亮度、文字和边缘高光的液态玻璃主题。
+version: 1.0.0
+apiVersion: 2.0.0.0
+author: Ceshi
+readme: README.md
+url: https://github.com/ClassIsland/ClassIsland
+supportedOSPlatforms:
+  - Windows
+  - Linux
+  - OSX

@@ -1,0 +1,36 @@
+name: Package ClassIsland Liquid Glass
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ClassIsland/ClassIsland
+          path: classisland
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Place plugin beside ClassIsland sample extensions
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force classisland/Extensions | Out-Null
+          Copy-Item -Recurse ClassIsland.LiquidGlass classisland/Extensions/LiquidGlass
+      - name: Build plugin
+        shell: pwsh
+        run: dotnet build classisland/Extensions/LiquidGlass/ClassIsland.LiquidGlass.csproj -c Release
+      - name: Create installable cipx
+        shell: pwsh
+        run: |
+          $source = 'classisland/Extensions/LiquidGlass/bin/Release/net8.0'
+          Compress-Archive -Path "$source/*" -DestinationPath 'ClassIsland.LiquidGlass-1.0.0.zip' -Force
+          Move-Item 'ClassIsland.LiquidGlass-1.0.0.zip' 'ClassIsland.LiquidGlass-1.0.0.cipx'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ClassIsland.LiquidGlass-1.0.0
+          path: ClassIsland.LiquidGlass-1.0.0.cipx
