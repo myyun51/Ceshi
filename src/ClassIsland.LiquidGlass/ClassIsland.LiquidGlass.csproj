@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>ClassIsland.LiquidGlass</AssemblyName>
+    <RootNamespace>ClassIsland.LiquidGlass</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ClassIsland.LiquidGlass</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>ClassIsland community</Authors>
+    <Description>Adaptive-brightness liquid-glass control for ClassIsland WPF plugin components.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/ClassIsland/ClassIsland</RepositoryUrl>
+  </PropertyGroup>
+</Project>
